@@ -22,17 +22,17 @@ label_top.setGeometry(135, 10, 230, 30)
 label_top.setAlignment(Qt.AlignmentFlag.AlignHCenter | Qt.AlignmentFlag.AlignVCenter)
 label_top.setStyleSheet("background-color: none; font-size: 22px; font-family: Arial, Verdana, sans-serif;")
 
-label_titulo = QLabel("TÍTULO:", main_screen)
-label_titulo.setGeometry(135, 120, 230, 30)
-label_titulo.setStyleSheet("background-color: none; font-size: 22px; font-family: Arial, Verdana, sans-serif;")
+label_title = QLabel("TÍTULO:", main_screen)
+label_title.setGeometry(135, 120, 230, 30)
+label_title.setStyleSheet("background-color: none; font-size: 22px; font-family: Arial, Verdana, sans-serif;")
 
 line_edit = QLineEdit("", main_screen)
 line_edit.setGeometry(135, 160, 230, 50)
 line_edit.setStyleSheet("background-color: #ffffff; color: #22333b; font-size: 12px; border: 2px solid #ffffff; border-radius: 5px; font-family: Arial, Verdana, sans-serif;")
 
-label_conteudo = QLabel("CONTEÚDO", main_screen)
-label_conteudo.setGeometry(135, 210, 230, 50)
-label_conteudo.setStyleSheet("background-color: none; font-size: 22px; font-family: Arial, Verdana, sans-serif;")
+label_content = QLabel("CONTEÚDO", main_screen)
+label_content.setGeometry(135, 210, 230, 50)
+label_content.setStyleSheet("background-color: none; font-size: 22px; font-family: Arial, Verdana, sans-serif;")
 
 line_edit2 = QLineEdit("", main_screen)
 line_edit2.setGeometry(135, 260, 230, 80)
