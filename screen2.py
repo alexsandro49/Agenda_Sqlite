@@ -4,7 +4,7 @@ from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QTableWi
 from PyQt6.QtCore import Qt
 
 def update_table():
-    data = db_connection.mostrar_dados()
+    data = db_connection.show_data()
 
     if len(data) <= 12:
         data_table.setRowCount(12)
@@ -17,6 +17,12 @@ def update_table():
         data_table.setItem(i, 1, QTableWidgetItem(data[i][1]))
 
 
+def delete_data():
+    data = db_connection.show_data()  
+    linha = data_table.currentRow()
+    data_table.removeRow(linha)
+    titulo = data[linha][0]
+    db_connection.delete_data(titulo)
 
 app = QApplication(sys.argv)
 
