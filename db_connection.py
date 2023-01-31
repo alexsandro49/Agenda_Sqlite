@@ -1,9 +1,10 @@
 import sqlite3
 import screen1
+import screen2
 
 def salvar_dados():
     try:
-        banco = sqlite3.connect('banco_de_dados.db')
+        banco = sqlite3.connect('database.db')
         cursor = banco.cursor()
 
         titulo = screen1.line_edit.text()
@@ -16,13 +17,15 @@ def salvar_dados():
 
         screen1.line_edit.clear()
         screen1.line_edit2.clear()
+
+        screen2.update_table()
         
         print("Banco modificado com sucesso!")
     except sqlite3.Error as erro:
         print(f"Houve um erro: {erro}")
 
 def mostrar_dados():
-    banco = sqlite3.connect('banco_de_dados.db')
+    banco = sqlite3.connect('database.db')
     cursor = banco.cursor()
     cursor.execute("SELECT * FROM eventos")  
     return cursor.fetchall()
