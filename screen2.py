@@ -4,18 +4,21 @@ from PyQt6.QtWidgets import QApplication, QWidget, QPushButton, QLabel, QTableWi
 from PyQt6.QtCore import Qt
 
 def update_table():
+    global reverse
+
     data = db_connection.show_data()
+
+    if reverse:
+        data = data[::-1]
 
     if len(data) <= 12:
         data_table.setRowCount(12)
     else:
         data_table.setRowCount(len(data))
 
-    #data = data[::-1]
     for i in range(0, len(data)):
         data_table.setItem(i, 0, QTableWidgetItem(data[i][0]))
         data_table.setItem(i, 1, QTableWidgetItem(data[i][1]))
-
 
 def delete_data():
     data = db_connection.show_data()  
@@ -23,6 +26,16 @@ def delete_data():
     data_table.removeRow(linha)
     titulo = data[linha][0]
     db_connection.delete_data(titulo)
+
+def reverse_state():
+    global reverse
+
+    if reverse:
+        reverse = False
+    else:
+        reverse = True
+
+    update_table()
 
 app = QApplication(sys.argv)
 
@@ -59,4 +72,5 @@ data_table.setHorizontalHeaderLabels(["TÍTULO", "CONTEÚDO"])
 data_table.setColumnWidth(0, 140)
 data_table.setColumnWidth(1, 320)
 
+reverse = False
 update_table()

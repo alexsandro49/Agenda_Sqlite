@@ -11,14 +11,14 @@ def listar_eventos():
 def criar_eventos():
     screen2.events_screen.close()
     screen1.main_screen.show()
-
+    
 
 app = QApplication(sys.argv)
-
 
 screen1.btn2.clicked.connect(listar_eventos)
 screen2.btn1.clicked.connect(criar_eventos)
 screen1.btn3.clicked.connect(db_connection.save_data)
+screen2.btn3.clicked.connect(screen2.reverse_state)
 screen2.btn4.clicked.connect(screen2.delete_data)
 
 screen1.main_screen.show()
