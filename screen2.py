@@ -10,7 +10,6 @@ def update_table():
 
     if reverse:
         data = data[::-1]
-
     if len(data) <= 12:
         data_table.setRowCount(12)
     else:
@@ -34,8 +33,8 @@ def reverse_state():
         reverse = False
     else:
         reverse = True
-
     update_table()
+
 
 app = QApplication(sys.argv)
 
